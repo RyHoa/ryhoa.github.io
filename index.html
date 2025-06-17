@@ -49,6 +49,13 @@
       <div>
         <h1 class="name-title" id="typewriter-title"></h1>
         <p class="subtitle" id="subtitle">Full-Stack Developer | Cybersecurity Engineer</p>
+        <a href="ryan Hoang ATS Resume Final.pdf" 
+          download 
+          class="download-resume-btn" 
+          id="download-resume-btn" 
+          style="display: none;">
+          <i class="fas fa-download"></i> Download Resume
+        </a>
       </div>
     </div>
   </header>
@@ -234,12 +241,13 @@
             <div class="contact-option-value">github.com/RyHoa</div>
           </div>
         </a>
-        <div class="contact-option">
-          <i class="fas fa-map-marker-alt"></i>
+        <a href="ryan Hoang ATS Resume Final.pdf" download class="contact-option">
+          <i class="fas fa-download"></i>
           <div class="contact-option-text">
-            <div class="contact-option-label">Location</div>
-            <div class="contact-option-value">Evans, GA 30809</div>
+            <div class="contact-option-label">Resume</div>
+            <div class="contact-option-value">Download PDF</div>
           </div>
+        </a>
         </div>
       </div>
     </div>
@@ -308,6 +316,7 @@
       const subtitleElement = document.getElementById('subtitle');
       const mainContent = document.getElementById('main-content');
       const footer = document.querySelector('footer');
+      const resumeButton = document.getElementById('download-resume-btn');
       
       // Start typing the title
       await typeWriter(titleElement, 'Ryan Hoang', 150);
@@ -323,6 +332,10 @@
         // Initialize section animations after content appears
         initializeSectionAnimations();
       }, 800);
+
+        setTimeout(() => {
+        resumeButton.style.display = 'inline-block';
+      }, 2000);
     }
 
     // Section animation functionality
