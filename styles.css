@@ -911,9 +911,36 @@ body::before {
   margin-top: 25px;
 }
 
+.education-container {
+  background: var(--skill-bg); /* reuse same background */
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+}
+
+.education-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(220, 20, 60, 0.05), transparent);
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.education-container:hover::before {
+  left: 100%;
+}
+
 .education-container:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 20px var(--shadow-light);
+  transform: translateY(-3px);
   cursor: pointer;
 }
 
@@ -921,6 +948,15 @@ body::before {
   color: var(--accent-primary);
   margin-bottom: 10px;
   font-family: 'JetBrains Mono', monospace;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.education-container p {
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
 }
 
 .download-resume-btn {
